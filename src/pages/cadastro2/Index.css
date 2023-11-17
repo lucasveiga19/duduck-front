@@ -1,0 +1,89 @@
+.cadastro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #1a1a2e;
+  }
+  
+  .header {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo {
+    width: 54px;
+    height: 56px;
+  }
+  
+  .label, .labelintro {
+    color: #A2A2B6;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    margin: 4px 0;
+    
+  }
+  
+  .input {
+    width: 100%;
+    padding: 24px 34px;
+    border: 1px solid #A2A2B6;
+    border-radius: 999px;
+    color: #FFFFFF;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    margin-top: 2vh; 
+    margin-bottom: 2vh;
+  }
+  
+  .botaocadastrar, .botaoentrar {
+  
+    width: 100%;
+    padding: 24px 34px;
+    margin-top: 20px; /* Aumente o espaçamento entre os botões */
+    border-radius: 999px;
+    border: 1px solid #FFF;
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    cursor: pointer;
+  }
+  
+  .botaocadastrar {
+    margin-top: 5vh;
+    background: radial-gradient(100% 100% at 50% 100%, rgba(255, 255, 255, 0.00) 43.25%, rgba(255, 127, 55, 0.50) 100%), #FF7966;
+    box-shadow: 0px 8px 25px 0px rgba(255, 121, 102, 0.50);
+  }
+  
+  .botaoentrar {
+    
+    background: rgba(255, 255, 255, 0.10);
+   
+  }
+  .cadastro-form {
+  
+    width: 100%;
+    max-width: 900px; /* Ajuste este valor conforme necessário para a largura do formulário */
+    padding: 20px;
+  
+    margin: 100px auto; /* Aumenta o espaçamento em relação ao topo e ao fundo */
+  }
+  .loginlink {
+    margin-top: 15vh;
+    text-align: center;
+    align-items: center;
+    
+  }
+  #labelentrar {
+    color: #FFF;
+  }
+  
