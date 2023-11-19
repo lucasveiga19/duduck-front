@@ -1,51 +1,51 @@
-/* Estilos globais */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+.tudohome {
   background-color: #1C1C23;
-}
-
-/* Estilos do container principal */
-.container {
+  background-image: url('../../assets/detalhespi.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 40%; /* Increase the size of the background image */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-/* Estilos da imagem de fundo */
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
-  background-image: url('../../assets/detalhespi.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -1;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-
-/* Estilos do cabeçalho */
-.header {
+.cabecahome {
   text-align: center;
-  color: #FFF;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo img {
-  width: 200px;
-  height: auto;
-  margin-bottom: 10px;
+.logoduduck {
+  width: 514px;
+height: 474px;
+top: 136px;
+left: 590px;
+
+  margin-top: 20px; /* Espaçamento adicionado acima da logo */
 }
 
-/* Estilos dos botões */
+.logoNome,
+.logodescricao {
+  margin-bottom: 2px;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .botoes {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .botaoum,
@@ -56,12 +56,13 @@ body {
   border: 1px solid #FFF;
   color: #FFF;
   text-align: center;
-  text-decoration: none;
   margin: 10px 0;
   transition: background-color 0.2s;
+  text-decoration: none;
 }
 
 .botaoum {
+
   background: radial-gradient(100% 100% at 50% 100%, rgba(255, 255, 255, 0.00) 43.25%, rgba(255, 127, 55, 0.50) 100%), #FF7966;
   box-shadow: 0px 8px 25px 0px rgba(255, 121, 102, 0.50);
 }
@@ -70,11 +71,10 @@ body {
   background: rgba(255, 255, 255, 0.10);
 }
 
-/* Hover dos botões */
 .botaoum:hover {
   background-color: #FF8A65;
 }
 
 .botaodois:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
 }

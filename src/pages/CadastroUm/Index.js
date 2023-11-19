@@ -6,11 +6,12 @@ import appleIcon from '../../assets/Apple.png'; // Importando o ícone da Apple
 import googleIcon from '../../assets/Google.png'; // Importando o ícone do Google
 import facebookIcon from '../../assets/Facebook.png'; // Importando o ícone do Facebook
 import logoNome from '../../assets/nomeduduck.png'; 
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Index() {
   return (
-<div className="container">
-<div className="header">
+<div className="tudo">
+<div className="cabeca">
         <img src={logo} alt="Duduck Logo" className="logo" />
         <img src={logoNome} alt="Duduck " className="logonome" />
         
@@ -26,9 +27,8 @@ function Index() {
           <img src={facebookIcon} alt="Facebook" className="icon" />Registre-se com Facebook
         </button>
         <div className="separator">ou</div>
-        <button className="button email">
-         Registre-se com E-mail
-        </button>
+        <Link to="/cadastroDois" className="button email"> Registre-se com E-mail</Link>
+        
       </div>
     </div>
   );

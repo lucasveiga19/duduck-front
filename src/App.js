@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PaginaInicial from './pages/Home/Index.js';
-import Login from './pages/login/Index.js';
-import CadastroUm from './pages/cadastro1/Index.js';
-import CadastroDois from './pages/cadastro2/Index.js';
+import Login from './pages/Login/Index.js';
+import CadastroUm from './pages/CadastroUm/Index.js';
+import CadastroDois from './pages/CadastroDois/Index.js';
 
 function App() {
   return (

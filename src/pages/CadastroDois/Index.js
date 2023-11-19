@@ -2,7 +2,7 @@ import React from 'react';
 import './Index.css'; // Importing the CSS file
 import logo from '../../assets/duduck.png'; 
 import logoNome from '../../assets/nomeduduck.png'; 
-
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 const Index = () => {
   return (
     <div className="cadastro-container">
@@ -19,7 +19,8 @@ const Index = () => {
         <button className='botaocadastrar' type="submit">Comece, é grátis!</button>
         <div className="loginlink">
           <span id='labelentrar' className='labelintro 2'>Você já possui conta?</span>
-          <button className='botaoentrar' type="button">Entrar</button>
+          
+          <Link to="/login" className="botaoentrar">Eu tenho uma conta</Link>
         </div>
       </form>
     </div>

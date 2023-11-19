@@ -1,77 +1,72 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Usa min-height para garantir que o conteúdo não exceda a altura da tela */
-    background-color: #1a1a2e;
-  }
-  
-  .header {
-    position: absolute; /* Posiciona o cabeçalho no topo da página */
-    top: 20px; /* Ajuste essa valor conforme necessário para mover para cima */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-  }
-  
-  .logo {
-    width: 54px; 
-    height: 56px; 
-  }
-  
-   
-  
-  .inputemail:focus,
-  .inputsenha:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-  }
-  
-  .inputemail::placeholder,
-  .inputsenha::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  
-  
-  
-  
-  .loginform {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza os filhos horizontalmente */
-    justify-content: center; /* Centraliza os filhos verticalmente */
-    width: 100%;
-    max-width: 340px;
-    gap: 10px;
-    margin-top: 50px; /* Adiciona espaço no topo, ajuste conforme necessário */
-  }
-  
-  .inputemail,
-  .inputsenha {
-    width: 100%;
-    padding: 14px 24px;
-    border: 1px solid #A2A2B6;
-    border-radius: 30px;
-    color: #FFFFFF;
-    background: #1a1a2e;
-    backdrop-filter: blur(5px);
-    margin-top: 0.5rem; /* Espaço entre a label e o input */
-  }
-  
-  
-  .input-group {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: flex-start; /* Alinha os elementos à esquerda */
-    width: 100%;
-    margin-bottom: 1rem; /* Espaço abaixo de cada grupo de input */
-  }
-  
-  
+body {
+  margin: 0; /* Remove default margin */
+  font-family: 'Inter', sans-serif;
+
+}
+
+.tudologin {
+  background-color: #1C1C23;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 54px;
+  height: 56px;
+}
+
+.inputemail:focus,
+.inputsenha:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.inputemail::placeholder,
+.inputsenha::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.loginform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 340px;
+  gap: 10px;
+  margin-top: 50vh; /* Adjusted to center vertically */
+  transform: translateY(-50%);
+}
+
+.inputemail,
+.inputsenha {
+  width: 100%; /* Adjusted to full width */
+  height: 45px;
+  gap: 4px;
+  border: 1px solid #A2A2B6;
+  border-radius: 30px;
+  color: #FFFFFF;
+  background: #1a1a2e;
+  backdrop-filter: blur(5px);
+  margin-top: 0.5rem;
+}
+
+.input-group {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+
   
   .label {
     color: #A2A2B6;

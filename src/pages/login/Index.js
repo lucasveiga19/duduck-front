@@ -15,7 +15,8 @@ function Index() {
 
   return (
        
-<div className="container">
+
+<div className="tudologin" style={{ backgroundColor: '#1C1C23' }}>
       <div className="header">
         <img src={logo} alt="Duduck Logo" className="logo" />
         <img src={logoNome} alt="Duduck" className="logonome" />
