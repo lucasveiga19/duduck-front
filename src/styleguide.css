@@ -1,0 +1,96 @@
+:root {
+  --body-large-font-family: "Inter-Regular", Helvetica;
+  --body-large-font-size: 16px;
+  --body-large-font-style: normal;
+  --body-large-font-weight: 400;
+  --body-large-letter-spacing: 0.20000000298023224px;
+  --body-large-line-height: 24px;
+  --body-medium-font-family: "Inter-Regular", Helvetica;
+  --body-medium-font-size: 14px;
+  --body-medium-font-style: normal;
+  --body-medium-font-weight: 400;
+  --body-medium-letter-spacing: 0.20000000298023224px;
+  --body-medium-line-height: 20px;
+  --body-small-font-family: "Inter-Medium", Helvetica;
+  --body-small-font-size: 12px;
+  --body-small-font-style: normal;
+  --body-small-font-weight: 500;
+  --body-small-letter-spacing: 0.20000000298023224px;
+  --body-small-line-height: 16px;
+  --greyscalegrey-20: rgba(193, 193, 205, 1);
+  --greyscalegrey-30: rgba(162, 162, 181, 1);
+  --greyscalegrey-40: rgba(131, 131, 156, 1);
+  --greyscalegrey-50: rgba(102, 102, 128, 1);
+  --greyscalegrey-60: rgba(78, 78, 97, 1);
+  --greyscalegrey-70: rgba(53, 53, 66, 1);
+  --greyscalegrey-80: rgba(28, 28, 35, 1);
+  --greyscalewhite: rgba(255, 255, 255, 1);
+  --h1-font-family: "Inter-SemiBold", Helvetica;
+  --h1-font-size: 12px;
+  --h1-font-style: normal;
+  --h1-font-weight: 600;
+  --h1-letter-spacing: 0px;
+  --h1-line-height: 16px;
+  --h100-font-family: "Inter-SemiBold", Helvetica;
+  --h100-font-size: 12px;
+  --h100-font-style: normal;
+  --h100-font-weight: 600;
+  --h100-letter-spacing: 0px;
+  --h100-line-height: 16px;
+  --h2-font-family: "Inter-SemiBold", Helvetica;
+  --h2-font-size: 14px;
+  --h2-font-style: normal;
+  --h2-font-weight: 600;
+  --h2-letter-spacing: 0px;
+  --h2-line-height: 20px;
+  --h3-font-family: "Inter-SemiBold", Helvetica;
+  --h3-font-size: 16px;
+  --h3-font-style: normal;
+  --h3-font-weight: 600;
+  --h3-letter-spacing: 0px;
+  --h3-line-height: 24px;
+  --h4-font-family: "Inter-Bold", Helvetica;
+  --h4-font-size: 20px;
+  --h4-font-style: normal;
+  --h4-font-weight: 700;
+  --h4-letter-spacing: 0px;
+  --h4-line-height: 32px;
+  --h5-font-family: "Inter-Bold", Helvetica;
+  --h5-font-size: 24px;
+  --h5-font-style: normal;
+  --h5-font-weight: 700;
+  --h5-letter-spacing: 0px;
+  --h5-line-height: 36px;
+  --h7-font-family: "Inter-Bold", Helvetica;
+  --h7-font-size: 40px;
+  --h7-font-style: normal;
+  --h7-font-weight: 700;
+  --h7-letter-spacing: 0px;
+  --h7-line-height: 40px;
+  --white-white-100: rgba(255, 255, 255, 1);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Inter:600");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+
+a {
+  text-decoration: none;
+}
