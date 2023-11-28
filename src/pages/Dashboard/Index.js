@@ -1,8 +1,7 @@
 import React from 'react';
 import "./styleD.css";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import ellipse from "../../assets/iconsDashboard/ellipse.svg";
-import ellipse1 from "../../assets/iconsDashboard/ellipse-1.svg";
+import ReactSpeedometer from "react-d3-speedometer";
 import line from "../../assets/iconsDashboard/line.svg";
 import icons_home from "../../assets/iconsDashboard/icons-home.svg";
 import frame from "../../assets/iconsDashboard/frame.svg";
@@ -15,21 +14,36 @@ import netflix from "../../assets/iconsDashboard/netflix.png";
 import vector1 from "../../assets/iconsDashboard/vector-1.svg";
 
 function Index() {
+  const streamingServices = [
+    { name: 'Spotify', cost: 5.99 },
+    { name: 'YouTube Premium', cost: 18.99 },
+    { name: 'Microsoft OneDrive', cost: 29.99 },
+    { name: 'Netflix', cost: 37.99 },
+  ];
+
+  const totalCost = streamingServices.reduce((sum, service) => sum + service.cost, 0);
+
+  const fillPercentage = (totalCost / 1000) * 100;
+
   return (
     <div className="indexD">
       <div className="div">
+        <div className="main-ReactSpeedometer">
+        <ReactSpeedometer
+          maxValue={1000}
+          value={totalCost}
+          needleColor="red"
+          startColor={"rgba(255, 195, 0, 1)"}
+          segments={10}
+          endColor={"rgba(255, 165, 0, 1)"}
+          needleTransitionDuration={4000}
+          needleTransition="easeBounceIn"
+          ringWidth={30}
+          textColor="none"
+        />
+        </div>
         <div className="main-circle">
-          <img
-            className="ellipse"
-            alt="Ellipse"
-            src={ellipse}
-          />
-          <img
-            className="img"
-            alt="Ellipse"
-            src={ellipse1}
-          />
-          <div className="text-wrapper">R$60,24</div>
+          <div className="text-wrapper">R${totalCost.toFixed(2)}</div>
           <div className="text-wrapper-2">Gastos Mensais</div>
         </div>
         <div className="active-subs">
@@ -124,8 +138,8 @@ function Index() {
         </div>
         <div className="items">
           <div className="div-2">
-            <div className="text-wrapper-9">R$5.99</div>
-            <div className="text-wrapper-10">Spotify</div>
+            <div className="text-wrapper-9">R${streamingServices[0].cost}</div>
+            <div className="text-wrapper-10">{streamingServices[0].name}</div>
             <img
               className="spotify-logo"
               alt="Spotify logo"
@@ -133,8 +147,8 @@ function Index() {
             />
           </div>
           <div className="div-2">
-            <div className="text-wrapper-11">R$18.99</div>
-            <div className="text-wrapper-12">YouTube Premium</div>
+            <div className="text-wrapper-11">R${streamingServices[1].cost}</div>
+            <div className="text-wrapper-12">{streamingServices[1].name}</div>
             <div className="YT-premium-lgoo">
               <div className="group-wrapper">
                 <div className="group">
@@ -150,8 +164,8 @@ function Index() {
             </div>
           </div>
           <div className="div-2">
-            <div className="text-wrapper-13">R$29.99</div>
-            <div className="text-wrapper-14">Microsoft OneDrive</div>
+            <div className="text-wrapper-13">R${streamingServices[2].cost}</div>
+            <div className="text-wrapper-14">{streamingServices[2].name}</div>
             <div className="onedrive-logo">
               <img
                 className="frame-3"
@@ -161,8 +175,8 @@ function Index() {
             </div>
           </div>
           <div className="div-2">
-            <div className="text-wrapper-15">R$37.99</div>
-            <div className="text-wrapper-16">Netflix</div>
+            <div className="text-wrapper-15">R${streamingServices[3].cost}</div>
+            <div className="text-wrapper-16">{streamingServices[3].name}</div>
             <div className="netflix-logo">
               <div className="frame-4">
                 <div className="overlap-group-wrapper">

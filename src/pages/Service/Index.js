@@ -34,9 +34,12 @@ function Index() {
                     </div>
                     <div className="input-description">
                         <div className="auto-layout-vertical">
-                        <div className="text-wrapper">Description</div>
+                        <div className="text-wrapper">Tipo de Plano</div>
                         <div className="input" />
                         </div>
+                    </div>
+                    <div className="input-plano">
+                        <div className="text-plano">Plano Individual</div>
                     </div>
                     <div className="HBO-GO-logo">
                         <div className="rectangle" />
@@ -97,9 +100,14 @@ function Index() {
                         src={line}
                     />
                     <div className="text-wrapper-2">R$5.99</div>
-                    <div className="text-wrapper-3">Preço mensal</div>
+                    <div className="text-wrapper-3">Preço mensal </div>
+                    <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                    <div className="botoes">
+                        <Link to="/dashboard" className="botaoquatro link">Adicionar este serviço</Link>
                     </div>
-                    <div className="text-wrapper-4">Novo Serviço</div>
+                    </div>
+                    <div className="text-wrapper-4">Novo Serviço </div>
+                    
                     <Link to="/dashboard">
                     <img
                     className="icons-back-3"
