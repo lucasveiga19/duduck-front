@@ -84,6 +84,17 @@
     top: 384px;
     width: 327px;
   }
+
+  .indexS .input-plano {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    left: 350px;
+    position: absolute;
+    top: 420px;
+    width: 327px;
+  }
   
   .indexS .auto-layout-vertical {
     align-items: flex-start;
@@ -100,6 +111,20 @@
     color: var(--greyscalegrey-50);
     font-family: var(--body-small-font-family);
     font-size: var(--body-small-font-size);
+    font-style: var(--body-small-font-style);
+    font-weight: var(--body-small-font-weight);
+    letter-spacing: var(--body-small-letter-spacing);
+    line-height: var(--body-small-line-height);
+    margin-top: -1px;
+    position: relative;
+    text-align: center;
+  }
+
+  .indexS .text-plano {
+    align-self: stretch;
+    color: var(--greyscalewhite);
+    font-family: var(--body-small-font-family);
+    font-size: var(50);
     font-style: var(--body-small-font-style);
     font-weight: var(--body-small-font-weight);
     letter-spacing: var(--body-small-letter-spacing);
@@ -396,3 +421,21 @@
     top: 742px;
     width: 374px;
   }
+
+  .botaoquatro {
+  width: 324px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  border: 1px solid #FFF;
+  color: #FFF;
+  text-align: center;
+  margin: 10px 0;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  background: radial-gradient(100% 100% at 50% 100%, rgba(255, 255, 255, 0.00) 43.25%, rgba(255, 127, 55, 0.50) 100%), #FF7966;
+  box-shadow: 0px 8px 25px 0px rgba(255, 121, 102, 0.50);
+}
+
+.botaoquatro:hover {
+  background-color: #da2f49;
+}
