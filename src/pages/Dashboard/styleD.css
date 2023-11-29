@@ -17,7 +17,15 @@
   height: 238px;
   left: 530px;
   position: absolute;
-  top: 130px;
+  top: 190px;
+  width: 230px;
+}
+
+.indexD .main-ReactSpeedometer {
+  height: 238px;
+  left: 565px;
+  position: relative;
+  top: 190px;
   width: 230px;
 }
 
@@ -616,4 +624,21 @@
   position: absolute;
   top: 25px;
   width: 16px;
+}
+
+.indexD .ellipse2 {
+  width: 300px;
+  height: 150px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex;
+  align-items: flex;
+  flex-direction: column;
+  color: #fff;
+  font-family: Arial, sans-serif;
+
+  left: 810px;
+  top: 955px;
+  white-space: nowrap;
 }
