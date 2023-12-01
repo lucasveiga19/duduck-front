@@ -1,7 +1,6 @@
 import React from 'react';
 import "./styleD.css";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import ReactSpeedometer from "react-d3-speedometer";
 import line from "../../assets/iconsDashboard/line.svg";
 import icons_home from "../../assets/iconsDashboard/icons-home.svg";
 import frame from "../../assets/iconsDashboard/frame.svg";
@@ -29,18 +28,6 @@ function Index() {
     <div className="indexD">
       <div className="div">
         <div className="main-ReactSpeedometer">
-        <ReactSpeedometer
-          maxValue={1000}
-          value={totalCost}
-          needleColor="red"
-          startColor={"rgba(255, 195, 0, 1)"}
-          segments={10}
-          endColor={"rgba(255, 165, 0, 1)"}
-          needleTransitionDuration={4000}
-          needleTransition="easeBounceIn"
-          ringWidth={30}
-          textColor="none"
-        />
         </div>
         <div className="main-circle">
           <div className="text-wrapper">R${totalCost.toFixed(2)}</div>
