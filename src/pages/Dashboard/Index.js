@@ -9,10 +9,12 @@ import icons_credit_cards from "../../assets/iconsDashboard/icons-credit-cards.s
 import icons_settings from "../../assets/iconsDashboard/icons-settings.svg";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import CircularProgressBar from './CircularProgressBar';
 
 function Index() {
   const [userSubscriptions, setUserSubscriptions] = useState([]);
   const { userId } = useParams();
+  const [progressWidth, setProgressWidth] = useState(30);
 
   useEffect(() => {
     // Fazer a solicitação GET para obter as informações do usuário
@@ -24,9 +26,26 @@ function Index() {
         console.error('Erro ao obter informações do usuário:', error);
       });
     console.log('User ID:', userId);
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://127.0.0.1:8080/user/${userId}`);
+        setUserSubscriptions(response.data.subscriptions);
+
+        // Agora você pode realizar outras operações após obter os dados do usuário
+        console.log('User ID:', userId);
+
+        const totalCost = calculateTotalCost();
+        const width = Math.floor(totalCost / 10);
+        setProgressWidth(width);
+      } catch (error) {
+        console.error('Erro ao obter informações do usuário:', error);
+      }
+    };
+
+    fetchData();
   }, [userId]);
 
-  // Função para calcular o custo total com base nas assinaturas do usuário
   const calculateTotalCost = () => {
     if (Array.isArray(userSubscriptions) && userSubscriptions?.length > 0) {
       return userSubscriptions.reduce((sum, subscription) => sum + subscription.price, 0);
@@ -64,10 +83,12 @@ function Index() {
 
   return (
     <div className="indexD">
+      <script src="indexProgress.js"></script>
       <div className="div">
         <div className="main-ReactSpeedometer">
         </div>
         <div className="main-circle">
+          <CircularProgressBar value={progressWidth} />
           <div className="text-wrapper">R${calculateTotalCost().toFixed(2)}</div>
           <div className="text-wrapper-2">Gastos Mensais</div>
         </div>
@@ -100,7 +121,7 @@ function Index() {
           </div>
         </div>
         <div className="active-subs-wrapper">
-        <Link to="/pagamento">
+        <Link to={`/pagamento/${userId}`}>
           <div className="active-subs-2">
             <div className="text-wrapper-6">Pagamento</div>
             <img
@@ -133,6 +154,7 @@ function Index() {
           />
         </Link>
         </div>
+        <Link to="/login">
         <div className="div-wrapper">
           <div className="active-subs-2">
             <div className="text-wrapper-8">Sair</div>
@@ -143,6 +165,7 @@ function Index() {
             />
           </div>
         </div>
+        </Link>
         <div className="highest-subs">
           <img
             className="line"

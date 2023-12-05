@@ -22,7 +22,7 @@ function App() {
           <Route path="/cadastroDois" component={CadastroDois} />
           <Route path="/dashboard/:userId" component={Dashboard} />
           <Route path="/service/:userId" component={Service} />
-          <Route path="/pagamento" component={Pagamento} />
+          <Route path="/pagamento/:userId" component={Pagamento} />
           <Route path="/config" component={Config} />
         </Switch>
       </div>

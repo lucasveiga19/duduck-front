@@ -1,0 +1,29 @@
+
+.container-progress {
+  height: 400px;
+  width: 400px;
+  background-color: rgba(28, 28, 35, 1);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 85%;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+.circular-progress {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: rgba(28, 28, 35, 1);
+  border-radius: 50%;
+}
