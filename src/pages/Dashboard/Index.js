@@ -1,28 +1,66 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./styleD.css";
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import line from "../../assets/iconsDashboard/line.svg";
 import icons_home from "../../assets/iconsDashboard/icons-home.svg";
 import frame from "../../assets/iconsDashboard/frame.svg";
 import line_1 from "../../assets/iconsDashboard/line-1.svg";
 import icons_credit_cards from "../../assets/iconsDashboard/icons-credit-cards.svg";
 import icons_settings from "../../assets/iconsDashboard/icons-settings.svg";
-import spotify from "../../assets/iconsDashboard/spotify-logo.svg";
-import microsoft from "../../assets/iconsDashboard/microsoft.svg";
-import netflix from "../../assets/iconsDashboard/netflix.png";
-import vector1 from "../../assets/iconsDashboard/vector-1.svg";
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 function Index() {
-  const streamingServices = [
-    { name: 'Spotify', cost: 5.99 },
-    { name: 'YouTube Premium', cost: 18.99 },
-    { name: 'Microsoft OneDrive', cost: 29.99 },
-    { name: 'Netflix', cost: 37.99 },
-  ];
+  const [userSubscriptions, setUserSubscriptions] = useState([]);
+  const { userId } = useParams();
 
-  const totalCost = streamingServices.reduce((sum, service) => sum + service.cost, 0);
+  useEffect(() => {
+    // Fazer a solicitação GET para obter as informações do usuário
+    axios.get(`http://127.0.0.1:8080/user/${userId}`) 
+      .then(response => {
+        setUserSubscriptions(response.data.subscriptions);
+      })
+      .catch(error => {
+        console.error('Erro ao obter informações do usuário:', error);
+      });
+    console.log('User ID:', userId);
+  }, [userId]);
 
-  const fillPercentage = (totalCost / 1000) * 100;
+  // Função para calcular o custo total com base nas assinaturas do usuário
+  const calculateTotalCost = () => {
+    if (Array.isArray(userSubscriptions) && userSubscriptions?.length > 0) {
+      return userSubscriptions.reduce((sum, subscription) => sum + subscription.price, 0);
+    } else {
+      return 0; // Retorna 0 se userSubscriptions não for um array ou estiver vazio
+    }
+  };
+
+  // Função para encontrar a assinatura mais cara
+  const findMostExpensiveSubscription = () => {
+    if (Array.isArray(userSubscriptions) && userSubscriptions?.length > 0) {
+      return userSubscriptions.reduce((maxSubscription, subscription) => {
+        return subscription.price > (maxSubscription ? maxSubscription.price : 0) ? subscription : maxSubscription;
+      }, userSubscriptions[0]);
+    } else {
+      return 0; // Retorna 0 se userSubscriptions não for um array ou estiver vazio
+    }
+  };
+
+  // Função para encontrar a assinatura mais barata
+  const findCheapestSubscription = () => {
+    if (Array.isArray(userSubscriptions) && userSubscriptions?.length > 0) {
+      return userSubscriptions.reduce((minSubscription, subscription) => {
+        return subscription.price < (minSubscription ? minSubscription.price : Infinity) ? subscription : minSubscription;
+      }, userSubscriptions[0]);
+    } else {
+      return 0; // Retorna 0 se userSubscriptions não for um array ou estiver vazio
+    }
+  };
+
+  // Função para contar o número de assinaturas ativas
+  const countActiveSubscriptions = () => {
+    return userSubscriptions?.length;
+  };
 
   return (
     <div className="indexD">
@@ -30,7 +68,7 @@ function Index() {
         <div className="main-ReactSpeedometer">
         </div>
         <div className="main-circle">
-          <div className="text-wrapper">R${totalCost.toFixed(2)}</div>
+          <div className="text-wrapper">R${calculateTotalCost().toFixed(2)}</div>
           <div className="text-wrapper-2">Gastos Mensais</div>
         </div>
         <div className="active-subs">
@@ -40,7 +78,7 @@ function Index() {
             src={line}
           />
           <div className="text-wrapper-3">Assinaturas ativas</div>
-          <div className="text-wrapper-4">12</div>
+          <div className="text-wrapper-4">{countActiveSubscriptions()}</div>
         </div>
         <div className="frame">
           <div className="active-subs-2">
@@ -112,7 +150,7 @@ function Index() {
             src={line_1}
           />
           <div className="text-wrapper-3">Assinatura mais cara</div>
-          <div className="text-wrapper-4">R$59.99</div>
+          <div className="text-wrapper-4">R${findMostExpensiveSubscription()?.price?.toFixed(2)}</div>
         </div>
         <div className="highest-subs-2">
           <img
@@ -121,66 +159,31 @@ function Index() {
             src={line_1}
           />
           <div className="text-wrapper-3">Assinatura mais barata</div>
-          <div className="text-wrapper-4">R$11.99</div>
+          <div className="text-wrapper-4">R${findCheapestSubscription()?.price?.toFixed(2)}</div>
         </div>
         <div className="items">
-          <div className="div-2">
-            <div className="text-wrapper-9">R${streamingServices[0].cost}</div>
-            <div className="text-wrapper-10">{streamingServices[0].name}</div>
-            <img
-              className="spotify-logo"
-              alt="Spotify logo"
-              src={spotify}
-            />
-          </div>
-          <div className="div-2">
-            <div className="text-wrapper-11">R${streamingServices[1].cost}</div>
-            <div className="text-wrapper-12">{streamingServices[1].name}</div>
-            <div className="YT-premium-lgoo">
-              <div className="group-wrapper">
-                <div className="group">
-                  <div className="vector-wrapper">
-                    <img
-                      className="vector"
-                      alt="Vector"
-                      src={vector1}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="div-2">
-            <div className="text-wrapper-13">R${streamingServices[2].cost}</div>
-            <div className="text-wrapper-14">{streamingServices[2].name}</div>
-            <div className="onedrive-logo">
-              <img
-                className="frame-3"
-                alt="Frame"
-                src={microsoft}
-              />
-            </div>
-          </div>
-          <div className="div-2">
-            <div className="text-wrapper-15">R${streamingServices[3].cost}</div>
-            <div className="text-wrapper-16">{streamingServices[3].name}</div>
+        {userSubscriptions?.map((subscription, index) => (
+          <div className="div-2" key={index}>
+            <div className="text-wrapper-9">R${subscription.price}</div>
+            <div className="text-wrapper-10">{subscription.name}</div>
             <div className="netflix-logo">
               <div className="frame-4">
                 <div className="overlap-group-wrapper">
                   <div className="overlap-group-2">
                     <img
                       className="image"
-                      alt="Image"
-                      src={netflix}
+                      alt={`${subscription.name} logo`}
+                      src={subscription.image}
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
+      </div>
         <div className="CTA">
-        <Link to="/service">
+        <Link to={`/service/${userId}`}>
           <div className="rectangle" />
           <img
             className="frame-5"

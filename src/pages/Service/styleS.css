@@ -28,7 +28,7 @@
     width: 1024px;
   }
   
-  .indexS .spotify-logo {
+  .indexS .quadrado-logo-1 {
     background-color: #000000;
     border-radius: 28.61px;
     height: 95px;
@@ -37,13 +37,61 @@
     top: 226px;
     width: 95px;
   }
+
+  .indexS .quadrado-logo-2 {
+    background-color: #000000;
+    border-radius: 28.61px;
+    height: 95px;
+    left: 89px;
+    position: absolute;
+    top: 227px;
+    width: 95px;
+  }
+
+  .indexS .quadrado-logo-3 {
+    background-color: #000000;
+    border-radius: 28.61px;
+    left: 449px;
+    position: absolute;
+    top: 184px;
+    height: 135px;
+    width: 135px;
+  }
+
+  .indexS .quadrado-logo-4 {
+    background-color: #000000;
+    border-radius: 24px;
+    height: 95px;
+    left: 834px;
+    position: absolute;
+    top: 226px;
+    width: 95px;
+  }
+
+  .indexS .quadrado-logo-5 {
+    background-color: #000000;
+    border-radius: 24px;
+    height: 95px;
+    left: 663px;
+    position: absolute;
+    top: 226px;
+    width: 95px;
+  }
   
-  .indexS .frame {
-    height: 55px;
-    left: 19px;
+  .indexS .imageLogoStreaming {
+    height: 63px;
+    left: 16px;
+    position: absolute;
+    top: 16px;
+    width: 63px;
+  }
+
+  .indexS .imageLogoStreamingPrincipal {
+    height: 93px;
+    left: 20px;
     position: absolute;
     top: 21px;
-    width: 55px;
+    width: 93px;
   }
   
   .indexS .group {
@@ -51,16 +99,6 @@
     border-radius: 24px;
     height: 95px;
     left: 668px;
-    position: absolute;
-    top: 227px;
-    width: 95px;
-  }
-  
-  .indexS .onedrive-logo {
-    background-color: #000000;
-    border-radius: 28.61px;
-    height: 95px;
-    left: 77px;
     position: absolute;
     top: 227px;
     width: 95px;
@@ -81,7 +119,7 @@
     gap: 16px;
     left: 350px;
     position: absolute;
-    top: 384px;
+    top: 379px;
     width: 327px;
   }
 
@@ -110,7 +148,7 @@
     align-self: stretch;
     color: var(--greyscalegrey-50);
     font-family: var(--body-small-font-family);
-    font-size: var(--body-small-font-size);
+    font-size: 20;
     font-style: var(--body-small-font-style);
     font-weight: var(--body-small-font-weight);
     letter-spacing: var(--body-small-letter-spacing);
@@ -124,7 +162,7 @@
     align-self: stretch;
     color: var(--greyscalewhite);
     font-family: var(--body-small-font-family);
-    font-size: var(50);
+    font-size: 90;
     font-style: var(--body-small-font-style);
     font-weight: var(--body-small-font-weight);
     letter-spacing: var(--body-small-letter-spacing);
@@ -155,16 +193,6 @@
     flex-shrink: 0;
   }
   
-  .indexS .HBO-GO-logo {
-    align-items: center;
-    display: inline-flex;
-    gap: 10px;
-    justify-content: center;
-    left: 433px;
-    position: absolute;
-    top: 184px;
-  }
-  
   .indexS .rectangle {
     background-color: #000000;
     border-radius: 48.23px;
@@ -187,7 +215,7 @@
     font-size: var(--h7-font-size);
     font-style: var(--h7-font-style);
     font-weight: var(--h7-font-weight);
-    left: 357px;
+    left: 327px;
     letter-spacing: var(--h7-letter-spacing);
     line-height: var(--h7-line-height);
     position: absolute;
@@ -261,16 +289,6 @@
     position: absolute;
     top: 0;
     width: 20px;
-  }
-  
-  .indexS .YT-premium {
-    background-color: #000000;
-    border-radius: 24px;
-    height: 95px;
-    left: 824px;
-    position: absolute;
-    top: 226px;
-    width: 95px;
   }
   
   .indexS .div-wrapper {

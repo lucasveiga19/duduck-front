@@ -20,8 +20,8 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/cadastroUm" component={CadastroUm} />
           <Route path="/cadastroDois" component={CadastroDois} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/service" component={Service} />
+          <Route path="/dashboard/:userId" component={Dashboard} />
+          <Route path="/service/:userId" component={Service} />
           <Route path="/pagamento" component={Pagamento} />
           <Route path="/config" component={Config} />
         </Switch>

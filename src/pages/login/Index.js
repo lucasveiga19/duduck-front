@@ -47,7 +47,8 @@ function Index() {
   }, [redirectToLogin]);
 
   if (redirectToLogin) {
-    return <Redirect to="/dashboard" />;
+    const user = users.find(user => user.email === email && user.password === password);
+    return <Redirect to={`/dashboard/${user.id}`} />;
   }
 
   return (
