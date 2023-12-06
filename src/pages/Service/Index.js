@@ -1,71 +1,66 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./styleS.css";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import frames_2 from "../../assets/iconsPagamento/frame-2.svg";
 import icons_back from "../../assets/iconsPagamento/icons-back.svg";
 import line from "../../assets/iconsDashboard/line.svg";
-import frame from "../../assets/iconsService/frame-5.svg";
-import hbo from "../../assets/iconsConfig/logoHbo.png";
-import netflix from "../../assets/iconsDashboard/netflix.png";
-import vector from "../../assets/iconsService/vector-8.svg";
-import youtube from "../../assets/iconsService/youtube.png";
-import microsoft from "../../assets/iconsService/onedrive.png";
-import spotify from "../../assets/iconsService/spotify.png";
+import axios from 'axios';
+import { useParams, useHistory }from 'react-router-dom';
 
 function Index() {
+    const { userId } = useParams();
+    const history = useHistory();
+    const [streamingServices, setStreamingServices] = useState([]);
 
-    const streamingServices = [
-        { name: 'Spotify', url: spotify },
-        { name: 'YouTube Premium', url: youtube },
-        { name: 'Microsoft OneDrive', url: microsoft },
-        { name: 'Netflix', url: netflix },
-        { name: 'HBO', url: hbo },
-      ];
+    useEffect(() => {
+    axios.get('http://127.0.0.1:8080/subscriptions')
+        .then(response => {
+        setStreamingServices(response.data);
+        })
+        .catch(error => {
+        console.error('Erro ao obter informações dos serviços de streaming:', error);
+        });
+    console.log('User ID:', userId);
+    }, [userId]);
 
-    const prices = [
-        { plano: 'Plano Estudante', valor: 5.99 },
-        { plano: 'Plano Individual', valor: 10.99 },
-        { plano: 'Plano Dupla', valor: 15.99 },
-        { plano: 'Plano Familia', valor: 20.99 },
-        { plano: 'Plano Premium', valor: 25.99 },
-    ];
-
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const handleAdd = () => {
-        if (currentIndex < prices.length - 1) {
-        setCurrentIndex(currentIndex + 1);
-        }
-    };
-
-    const handleSubtract = () => {
-        if (currentIndex > 0) {
-        setCurrentIndex(currentIndex - 1);
-        }
-    };
+    {streamingServices.map((service, index) => (
+        <div key={index} className={`${service.name.toLowerCase()}-logo`}>
+          <img
+            className="frame"
+            alt="Frame"
+            src={service.image}
+          />
+        </div>
+      ))}
 
     const [currentIndexStreaming, setCurrentIndexStreaming] = useState(0);
-    const [usedIndexes, setUsedIndexes] = useState([]);
 
     const handleAddStreaming = () => {
-        if (usedIndexes.length < streamingServices.length) {
-          let newIndex;
-          do {
-            newIndex = Math.floor(Math.random() * streamingServices.length);
-          } while (usedIndexes.includes(newIndex));
-      
-          setUsedIndexes((prevIndexes) => [...prevIndexes, newIndex]);
-          setCurrentIndexStreaming(newIndex);
-        }
-      };
-      
-      const handleSubtractStreaming = () => {
-        if (usedIndexes.length > 0) {
-          const lastUsedIndex = usedIndexes[usedIndexes.length - 1];
-          setUsedIndexes((prevIndexes) => prevIndexes.slice(0, -1));
-          setCurrentIndexStreaming(lastUsedIndex);
-        }
-      };
+      if (streamingServices.length > 0) {
+        const newIndex = (currentIndexStreaming + 1) % streamingServices.length;
+        setCurrentIndexStreaming(newIndex);
+      }
+    };
+
+    const handleSubtractStreaming = () => {
+      if (streamingServices.length > 0) {
+        const newIndex = (currentIndexStreaming - 1 + streamingServices.length) % streamingServices.length;
+        setCurrentIndexStreaming(newIndex);
+      }
+    };
+
+    const AddService = () => {
+      axios.post(`http://127.0.0.1:8080/subscriptions/${userId}/`+streamingServices[(currentIndexStreaming + 0) % streamingServices.length]?.id)
+        .then(response => {
+          // Lógica após a conclusão bem-sucedida
+          console.log('Serviço adicionado com sucesso!', response.data);
+    
+          // Redirecionar para a página desejada, se necessário
+          history.push(`/dashboard/${userId}`);
+        })
+        .catch(error => {
+          console.error('Erro ao adicionar serviço:', error);
+        });
+    };
 
     return (
             <div className="indexS">
@@ -74,42 +69,52 @@ function Index() {
                     <div className="overlap">
                     <div className="light-BG">
                     </div>
-                    <div className="spotify-logo">
-                        <img
-                        className="frame"
-                        alt="Frame"
-                        src={streamingServices[currentIndexStreaming].url}
-                        />
+                    <div className="quadrado-logo-1">
+                      <img
+                        className="imageLogoStreaming"
+                        alt={`Logo1-${currentIndexStreaming}`}
+                        src={streamingServices[(currentIndexStreaming + 9) % streamingServices.length]?.image}
+                      />
                     </div>
-                    <div className="group" />
-                    <div className="onedrive-logo">
-                        <img
-                        className="img"
-                        alt="Frame"
-                        src={streamingServices[currentIndexStreaming].url}
-                        />
+                    <div className="quadrado-logo-2">
+                      <img
+                        className="imageLogoStreaming"
+                        alt={`Logo2-${currentIndexStreaming}`}
+                        src={streamingServices[(currentIndexStreaming + 8) % streamingServices.length]?.image}
+                      />
+                    </div>
+                    <div className="quadrado-logo-3">
+                      <img
+                        className="imageLogoStreamingPrincipal"
+                        alt={`Logo3-${currentIndexStreaming}`}
+                        src={streamingServices[(currentIndexStreaming + 0) % streamingServices.length]?.image}
+                      />
+                    </div>
+                    <div className="quadrado-logo-4">
+                      <img
+                        className="imageLogoStreaming"
+                        alt={`Logo5-${currentIndexStreaming}`}
+                        src={streamingServices[(currentIndexStreaming + 2) % streamingServices.length]?.image}
+                      />
+                    </div>
+                    <div className="quadrado-logo-5">
+                      <img
+                        className="imageLogoStreaming"
+                        alt={`Logo4-${currentIndexStreaming}`}
+                        src={streamingServices[(currentIndexStreaming + 1) % streamingServices.length]?.image}
+                      />
                     </div>
                     <div className="input-description">
                         <div className="auto-layout-vertical">
-                        <div className="text-wrapper">Tipo de Plano</div>
+                        <div className="text-wrapper">Streaming</div>
                         <div className="input" />
                         </div>
                     </div>
                     <div className="input-plano">
-                        <div className="text-plano">{prices[currentIndex].plano}</div>
-                    </div>
-                    <div className="HBO-GO-logo">
-                        <div className="rectangle" />
-                        <img
-                        className="image"
-                        alt="Image"
-                        src={streamingServices[currentIndexStreaming].url}
-                        />
+                      <div className="text-plano">{streamingServices[currentIndexStreaming]?.name}</div>
                     </div>
                     <div className="adicionar-novo-servi">
-                        Adicionar novo
-                        <br />
-                        serviço
+                        Serviços Disponíveis
                     </div>
                     <img
                         className="icons-back"
@@ -123,45 +128,22 @@ function Index() {
                         src={icons_back}
                         onClick={handleAddStreaming}
                     />
-                    <div className="frame-wrapper">
-                        <div className="group-wrapper">
-                        <div className="overlap-group-wrapper">
-                            <div className="overlap-group">
-                            <img
-                                className="image-2"
-                                alt="Image"
-                                src={streamingServices[currentIndexStreaming].url}
-                            />
-                            </div>
-                        </div>
-                        </div>
                     </div>
-                    <div className="YT-premium">
-                        <img
-                        className="frame"
-                        alt="Frame"
-                        src={streamingServices[currentIndexStreaming].url}
-                        />
-                    </div>
-                    </div>
-                    <div className="plus" onClick={handleAdd} />
-                    <div className="minus" onClick={handleSubtract} />
                     <div className="price">
                     <img
                         className="line"
                         alt="Line"
                         src={line}
                     />
-                    <div className="text-wrapper-2">R${prices[currentIndex].valor}</div>
+                    <div className="text-wrapper-2">R${streamingServices[currentIndexStreaming]?.price}</div>
                     <div className="text-wrapper-3">Preço mensal </div>
                     <br/> <br/> <br/> <br/> <br/> <br/> <br/>
                     <div className="botoes">
-                        <Link to="/dashboard" className="botaoquatro link">Adicionar este serviço</Link>
+                        <Link to={`/dashboard/${userId}`} onClick={AddService} className="botaoquatro link">Adicionar este serviço</Link>
                     </div>
                     </div>
                     <div className="text-wrapper-4">Novo Serviço </div>
-                    
-                    <Link to="/dashboard">
+                    <Link to={`/dashboard/${userId}`}>
                     <img
                     className="icons-back-3"
                     alt="Icons back"
