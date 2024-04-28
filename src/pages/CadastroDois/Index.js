@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import './Index.css'; // Importando o arquivo CSS
-import logo from '../../assets/duduck.png';
-import logoNome from '../../assets/nomeduduck.png';
-import axios from 'axios'; // Importando o Axios
-import { Link, Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import React, { useState, useEffect } from "react";
+import "./Index.css"; // Importando o arquivo CSS
+import logo from "../../assets/duduck.png";
+import logoNome from "../../assets/nomeduduck.png";
+import axios from "axios"; // Importando o Axios
+import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 const Index = () => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const [redirectToLogin, setRedirectToLogin] = useState(false);
@@ -16,7 +16,7 @@ const Index = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -24,17 +24,18 @@ const Index = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8080/user', formData);
+      const response = await axios.post(
+        "https://duduck-api-latest.onrender.com/user",
+        formData
+      );
       console.log(response.data);
       setRedirectToLogin(true);
     } catch (error) {
-      console.error('Erro ao fazer o POST:', error);
+      console.error("Erro ao fazer o POST:", error);
     }
   };
 
-  useEffect(() => {
-    
-  }, [redirectToLogin]);
+  useEffect(() => {}, [redirectToLogin]);
 
   if (redirectToLogin) {
     return <Redirect to="/login" />;
@@ -47,7 +48,7 @@ const Index = () => {
         <img src={logoNome} alt="Duduck" className="logonome" />
       </div>
       <form className="cadastro-form" onSubmit={handleSubmit}>
-        <label className='label'>Endereço de E-mail</label>
+        <label className="label">Endereço de E-mail</label>
         <input
           className="input"
           type="email"
@@ -56,7 +57,7 @@ const Index = () => {
           onChange={handleChange}
           required
         />
-        <label className='label'>Senha</label>
+        <label className="label">Senha</label>
         <input
           className="input"
           type="password"
@@ -65,11 +66,20 @@ const Index = () => {
           onChange={handleChange}
           required
         />
-        <p className='labelintro'>Use 8 ou mais caracteres com uma mistura de letras, números e símbolos.</p>
-        <button className='botaocadastrar' type="submit">Comece, é grátis!</button>
+        <p className="labelintro">
+          Use 8 ou mais caracteres com uma mistura de letras, números e
+          símbolos.
+        </p>
+        <button className="botaocadastrar" type="submit">
+          Comece, é grátis!
+        </button>
         <div className="loginlink">
-          <span id='labelentrar' className='labelintro 2'>Você já possui uma conta?</span>
-          <Link to="/login" className="botaoentrar">Eu tenho uma conta</Link>
+          <span id="labelentrar" className="labelintro 2">
+            Você já possui uma conta?
+          </span>
+          <Link to="/login" className="botaoentrar">
+            Eu tenho uma conta
+          </Link>
         </div>
       </form>
     </div>
