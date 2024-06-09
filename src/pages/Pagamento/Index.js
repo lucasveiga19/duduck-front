@@ -3,11 +3,11 @@ import "./styleP.css";
 import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import icons_back from "../../assets/iconsPagamento/icons-back.svg";
 import credit_cards from "../../assets/iconsPagamento/credit-cards.svg";
-import frames_2 from "../../assets/iconsPagamento/frame-2.svg";
-import vector from "../../assets/iconsPagamento/vector-4.svg";
-import spotify from "../../assets/iconsPagamento/LogoSpotify.svg";
 import addCredit from "../../assets/iconsPagamento/icons-add.svg";
-import netflix from "../../assets/iconsPagamento/netflix.png";
+import icons_home from "../../assets/iconsDashboard/icons-home.svg";
+import line_1 from "../../assets/iconsDashboard/line-1.svg";
+import icons_credit_cards from "../../assets/iconsDashboard/icons-credit-cards.svg";
+import icons_settings from "../../assets/iconsDashboard/icons-settings.svg";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -85,9 +85,50 @@ function Index() {
   return (
     <div className="indexP">
       <div className="div">
-        <div className="text-wrapper">Pagamento</div>
+        <div className="frameNav">
         <Link to={`/dashboard/${userId}`}>
-          <img className="icons-back" alt="Icons back" src={icons_back} />
+          <div className="active-subs-2">
+            <div className="overlap-groupNav">
+              <div className="text-wrapper-5">Dashboard</div>
+              <div className="home">
+                <img className="icons-home" alt="Icons home" src={icons_home} />
+              </div>
+            </div>
+            <img className="line-2" alt="Line" src={line_1} />
+          </div>
+          </Link>
+        </div>
+        <div className="active-subs-wrapper">
+            <div className="active-subs-2 shadownBox">
+              <div className="text-wrapper-6 color-orange">Pagamento</div>
+              <img
+                className="icons-credit-cards"
+                alt="Icons credit cards"
+                src={icons_credit_cards}
+              />
+              <img className="line-2" alt="Line" src={line_1} />
+            </div>
+        </div>
+        <div className="frameNav-2">
+          <Link to="/config">
+            <div className="active-subs-2">
+              <div className="text-wrapper-7">Configurações</div>
+              <img className="line-2" alt="Line" src={line_1} />
+            </div>
+            <img
+              className="icons-settings"
+              alt="Icons settings"
+              src={icons_settings}
+            />
+          </Link>
+        </div>
+        <Link to="/login">
+          <div className="div-wrapperNav">
+            <div className="active-subs-2">
+              <div className="text-wrapper-8">Sair</div>
+              <img className="line-2" alt="Line" src={line_1} />
+            </div>
+          </div>
         </Link>
 
         {userCards?.map((cards, index) => (

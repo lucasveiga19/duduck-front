@@ -26,14 +26,6 @@ function Index() {
     console.log("User ID:", userId);
   }, [userId]);
 
-  {
-    streamingServices.map((service, index) => (
-      <div key={index} className={`${service.name.toLowerCase()}-logo`}>
-        <img className="frame" alt="Frame" src={service.image} />
-      </div>
-    ));
-  }
-
   const [currentIndexStreaming, setCurrentIndexStreaming] = useState(0);
 
   const handleAddStreaming = () => {
@@ -84,7 +76,7 @@ function Index() {
                 alt={`Logo1-${currentIndexStreaming}`}
                 src={
                   streamingServices[
-                    (currentIndexStreaming + 9) % streamingServices.length
+                    (currentIndexStreaming + 8) % streamingServices.length
                   ]?.image
                 }
               />
@@ -95,7 +87,7 @@ function Index() {
                 alt={`Logo2-${currentIndexStreaming}`}
                 src={
                   streamingServices[
-                    (currentIndexStreaming + 8) % streamingServices.length
+                    (currentIndexStreaming + 7) % streamingServices.length
                   ]?.image
                 }
               />
@@ -161,7 +153,7 @@ function Index() {
           <div className="price">
             <img className="line" alt="Line" src={line} />
             <div className="text-wrapper-2">
-              R${streamingServices[currentIndexStreaming]?.price}
+              R${streamingServices[currentIndexStreaming]?.price.toFixed(2)}
             </div>
             <div className="text-wrapper-3">Preço mensal </div>
             <br /> <br /> <br /> <br /> <br /> <br /> <br />

@@ -111,9 +111,9 @@ function Index() {
           <div className="text-wrapper-4">{countActiveSubscriptions()}</div>
         </div>
         <div className="frame">
-          <div className="active-subs-2">
+          <div className="active-subs-2 shadownBox">
             <div className="overlap-group">
-              <div className="text-wrapper-5">Dashboard</div>
+              <div className="text-wrapper-5 color-orange">Dashboard</div>
               <div className="home">
                 <img className="icons-home" alt="Icons home" src={icons_home} />
               </div>
@@ -172,7 +172,9 @@ function Index() {
         <div className="items">
           {userSubscriptions?.map((subscription, index) => (
             <div className="div-2" key={index}>
-              <div className="text-wrapper-9">R${subscription.price}</div>
+              <div className="text-wrapper-9">
+                R${subscription.price.toFixed(2)}
+              </div>
               <div className="text-wrapper-10">{subscription.name}</div>
               <div className="netflix-logo">
                 <div className="frame-4">
