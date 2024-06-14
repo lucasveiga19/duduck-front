@@ -171,8 +171,16 @@
   line-height: var(--h1-line-height);
   position: absolute;
   text-align: center;
-  top: 3px;
+  top: 6px;
   white-space: nowrap;
+}
+
+.indexD .color-orange{
+  color: rgb(255, 121, 102);
+}
+
+.indexD .shadownBox{
+  box-shadow: 5px 5px 5px #ff796680;
 }
 
 .indexD .home {
@@ -221,7 +229,7 @@
   line-height: var(--h1-line-height);
   position: absolute;
   text-align: center;
-  top: 26px;
+  top: 29px;
   white-space: nowrap;
 }
 
@@ -254,7 +262,7 @@
   line-height: var(--h1-line-height);
   position: absolute;
   text-align: center;
-  top: 26px;
+  top: 29px;
   white-space: nowrap;
 }
 

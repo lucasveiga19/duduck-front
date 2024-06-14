@@ -61,6 +61,174 @@
     position: relative;
     width: 40px;
   }
+
+  .indexP .frameNav {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 37px;
+    position: absolute;
+    top: 39px;
+  }
+
+  .indexP .frameNav-2 {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 353px;
+    position: absolute;
+    top: 39px;
+  }
+
+  .indexP .active-subs-2 {
+    -webkit-backdrop-filter: blur(10px) brightness(100%);
+    backdrop-filter: blur(10px) brightness(100%);
+    background-color: #4e4e6133;
+    border: none; /* ou border: 0; */
+    border-radius: 16px;
+    height: 69px;
+    margin: 0; /* Adicione essa linha para remover margens */
+    position: relative;
+    width: 129px;
+  }
+
+  .indexP .color-orange{
+    color: rgb(255, 121, 102);
+  }
+  
+  .indexP .shadownBox{
+    box-shadow: 5px 5px 5px #ff796680;
+  }
+
+  .indexP .overlap-groupNav {
+    height: 24px;
+    left: 0;
+    position: absolute;
+    top: 23px;
+    width: 113px;
+  }
+
+  .indexP .text-wrapper-5 {
+    color: var(--greyscalegrey-40);
+    font-family: var(--h1-font-family);
+    font-size: var(--h1-font-size);
+    font-style: var(--h1-font-style);
+    font-weight: var(--h1-font-weight);
+    left: 49px;
+    letter-spacing: var(--h1-letter-spacing);
+    line-height: var(--h1-line-height);
+    position: absolute;
+    text-align: center;
+    top: 6px;
+    white-space: nowrap;
+  }
+
+  .indexP .home {
+    height: 24px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 66px;
+  }
+  
+  .indexP .icons-home {
+    height: 18px;
+    left: 24px;
+    position: absolute;
+    top: 3px;
+    width: 18px;
+  }
+
+  .indexP .line-2 {
+    height: 1px;
+    left: 42px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 46px;
+  }
+
+  .indexP .active-subs-wrapper {
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 195px;
+    position: absolute;
+    top: 39px;
+  }
+
+  .indexP .text-wrapper-6 {
+    color: var(--greyscalegrey-40);
+    font-family: var(--h1-font-family);
+    font-size: var(--h1-font-size);
+    font-style: var(--h1-font-style);
+    font-weight: var(--h1-font-weight);
+    left: 42px;
+    letter-spacing: var(--h1-letter-spacing);
+    line-height: var(--h1-line-height);
+    position: absolute;
+    text-align: center;
+    top: 29px;
+    white-space: nowrap;
+  }
+
+  .indexP .icons-credit-cards {
+    height: 18px;
+    left: 18px;
+    position: absolute;
+    top: 26px;
+    width: 18px;
+  }
+
+  .indexP .text-wrapper-7 {
+    color: var(--greyscalegrey-40);
+    font-family: var(--h1-font-family);
+    font-size: var(--h1-font-size);
+    font-style: var(--h1-font-style);
+    font-weight: var(--h1-font-weight);
+    left: 37px;
+    letter-spacing: var(--h1-letter-spacing);
+    line-height: var(--h1-line-height);
+    position: absolute;
+    text-align: center;
+    top: 29px;
+    white-space: nowrap;
+  }
+
+  .indexP .icons-settings {
+    height: 24px;
+    left: 8px;
+    position: absolute;
+    top: 24px;
+    width: 24px;
+  }
+
+  .indexP .div-wrapperNav {
+    align-items: flex-end;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    left: 1295px;
+    position: absolute;
+    top: 39px;
+  }
+
+  .indexP .text-wrapper-8 {
+    color: var(--greyscalegrey-40);
+    font-family: "Inter", Helvetica;
+    font-size: 14px;
+    font-weight: 600;
+    left: 52px;
+    letter-spacing: 0;
+    line-height: 16px;
+    position: absolute;
+    text-align: center;
+    top: 26px;
+    white-space: nowrap;
+  }
   
   .indexP .img {
     height: 39px;
@@ -69,7 +237,7 @@
     top: 6px;
     width: 39px;
   }
-  
+
   .indexP .frame-wrapper {
     background-color: #ff0000;
     border-radius: 12px;
