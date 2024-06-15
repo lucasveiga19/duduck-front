@@ -202,7 +202,8 @@ function Index() {
                     </div>
                     <div className="input-password-2Box">
                       <div className="text-wrapperBox">CVV</div>
-                      <input className="inputBox" alt="Cvv" />
+                      value={userCard.cardIssuer}
+                      <input className="inputBox" onChange={(e) => handleInputChange(e, "cardIssuer")} alt="Cvv" />
                     </div>
                     <div className="input-password-3Box">
                       <div className="text-wrapperBox">Nome</div>

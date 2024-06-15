@@ -156,16 +156,12 @@ function Index() {
           </Link>
         </div>
         <div className="frame-2">
-        <Link to={`/service/${userId}`}>
+          <Link to={`/service/${userId}`}>
             <div className="active-subs-2">
               <div className="text-wrapper-7">Serviços</div>
               <img className="line-2" alt="Line" src={line_1} />
             </div>
-            <img
-              className="icons-settings"
-              alt="icons_play"
-              src={icons_play}
-            />
+            <img className="icons-settings" alt="icons_play" src={icons_play} />
           </Link>
         </div>
         <Link to="/login">
