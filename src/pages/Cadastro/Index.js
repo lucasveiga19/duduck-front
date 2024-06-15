@@ -48,28 +48,32 @@ const Index = () => {
         <img src={logoNome} alt="Duduck" className="logonome" />
       </div>
       <form className="cadastro-form" onSubmit={handleSubmit}>
-        <label className="label">Endereço de E-mail</label>
-        <input
-          className="input"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <label className="label">Senha</label>
-        <input
-          className="input"
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-        <p className="labelintro">
-          Use 8 ou mais caracteres com uma mistura de letras, números e
-          símbolos.
-        </p>
+        <div className="input-group">
+          <label className="label">Endereço de E-mail</label>
+          <input
+            className="input"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="input-group">
+          <label className="label">Senha</label>
+          <input
+            className="input"
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <p className="labelintro">
+            Use 8 ou mais caracteres com uma mistura de letras, números e
+            símbolos.
+          </p>
+        </div>
         <button className="botaocadastrar" type="submit">
           Comece, é grátis!
         </button>

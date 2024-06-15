@@ -1,459 +1,641 @@
 .indexS {
-    background-color: #1c1c23;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .indexS .new-subscription-wrapper {
-    background-color: #1c1c23;
-    height: 1024px;
-    width: 1440px;
-  }
-  
-  .indexS .new-subscription {
-    background-color: var(--greyscalegrey-80);
-    height: 1024px;
-    left: 6px;
-    position: relative;
-    width: 1434px;
-  }
-  
-  .indexS .overlap {
-    height: 476px;
-    left: 185px;
-    position: absolute;
-    top: 159px;
-    width: 1024px;
-  }
-  
-  .indexS .quadrado-logo-1 {
-    background-color: #000000;
-    border-radius: 28.61px;
-    height: 95px;
-    left: 268px;
-    position: absolute;
-    top: 226px;
-    width: 95px;
-  }
+  background-color: #1c1c23;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
-  .indexS .quadrado-logo-2 {
-    background-color: #000000;
-    border-radius: 28.61px;
-    height: 95px;
-    left: 89px;
-    position: absolute;
-    top: 227px;
-    width: 95px;
-  }
+.indexS .new-subscription-wrapper {
+  background-color: #1c1c23;
+  height: 1024px;
+  position: relative;
+  width: 1440px;
+}
 
-  .indexS .quadrado-logo-3 {
-    background-color: #000000;
-    border-radius: 28.61px;
-    left: 449px;
-    position: absolute;
-    top: 184px;
-    height: 135px;
-    width: 135px;
-  }
+.indexS .new-subscription {
+  background-color: var(--greyscalegrey-80);
+  height: 1024px;
+  left: 6px;
+  position: relative;
+  width: 1434px;
+}
 
-  .indexS .quadrado-logo-4 {
-    background-color: #000000;
-    border-radius: 24px;
-    height: 95px;
-    left: 834px;
-    position: absolute;
-    top: 226px;
-    width: 95px;
-  }
+.indexS .overlap {
+  height: 476px;
+  left: 185px;
+  position: absolute;
+  top: 159px;
+  width: 1024px;
+}
 
-  .indexS .quadrado-logo-5 {
-    background-color: #000000;
-    border-radius: 24px;
-    height: 95px;
-    left: 663px;
-    position: absolute;
-    top: 226px;
-    width: 95px;
-  }
-  
-  .indexS .imageLogoStreaming {
-    height: 63px;
-    left: 16px;
-    position: absolute;
-    top: 16px;
-    width: 63px;
-  }
+.indexS .quadrado-logo-1 {
+  background-color: #000000;
+  border-radius: 28.61px;
+  height: 95px;
+  left: 268px;
+  position: absolute;
+  top: 226px;
+  width: 95px;
+}
 
-  .indexS .imageLogoStreamingPrincipal {
-    height: 93px;
-    left: 20px;
-    position: absolute;
-    top: 21px;
-    width: 93px;
-  }
-  
-  .indexS .group {
-    background-color: #000000;
-    border-radius: 24px;
-    height: 95px;
-    left: 668px;
-    position: absolute;
-    top: 227px;
-    width: 95px;
-  }
-  
-  .indexS .img {
-    height: 41px;
-    left: 17px;
-    position: absolute;
-    top: 29px;
-    width: 62px;
-  }
-  
-  .indexS .input-description {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    left: 350px;
-    position: absolute;
-    top: 379px;
-    width: 327px;
-  }
+.indexS .quadrado-logo-2 {
+  background-color: #000000;
+  border-radius: 28.61px;
+  height: 95px;
+  left: 89px;
+  position: absolute;
+  top: 227px;
+  width: 95px;
+}
 
-  .indexS .input-plano {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    left: 350px;
-    position: absolute;
-    top: 420px;
-    width: 327px;
-  }
-  
-  .indexS .auto-layout-vertical {
-    align-items: flex-start;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 4px;
-    position: relative;
-    width: 327px;
-  }
-  
-  .indexS .text-wrapper {
-    align-self: stretch;
-    color: var(--greyscalegrey-50);
-    font-family: var(--body-small-font-family);
-    font-size: 20;
-    font-style: var(--body-small-font-style);
-    font-weight: var(--body-small-font-weight);
-    letter-spacing: var(--body-small-letter-spacing);
-    line-height: var(--body-small-line-height);
-    margin-top: -1px;
-    position: relative;
-    text-align: center;
-  }
+.indexS .quadrado-logo-3 {
+  background-color: #000000;
+  border-radius: 28.61px;
+  left: 449px;
+  position: absolute;
+  top: 184px;
+  height: 135px;
+  width: 135px;
+}
 
-  .indexS .text-plano {
-    align-self: stretch;
-    color: var(--greyscalewhite);
-    font-family: var(--body-small-font-family);
-    font-size: 90;
-    font-style: var(--body-small-font-style);
-    font-weight: var(--body-small-font-weight);
-    letter-spacing: var(--body-small-letter-spacing);
-    line-height: var(--body-small-line-height);
-    margin-top: -1px;
-    position: relative;
-    text-align: center;
-  }
-  
-  .indexS .input {
-    -webkit-backdrop-filter: blur(10px) brightness(100%);
-    align-self: stretch;
-    backdrop-filter: blur(10px) brightness(100%);
-    border: 1px solid;
-    border-color: var(--greyscalegrey-70);
-    border-radius: 16px;
-    flex: 0 0 auto;
-    position: relative;
-    width: 100%;
-  }
-  
-  .indexS .light-BG {
-    background-color: #353542;
-    border-radius: 48.23px;
-    position: relative;
-    width: 1024px;
-    height: 476px;
-    flex-shrink: 0;
-  }
-  
-  .indexS .rectangle {
-    background-color: #000000;
-    border-radius: 48.23px;
-    height: 161px;
-    position: relative;
-    width: 161px;
-  }
-  
-  .indexS .image {
-    height: 92px;
-    left: 31px;
-    position: absolute;
-    top: 35px;
-    width: 100px;
-  }
-  
-  .indexS .adicionar-novo-servi {
-    color: var(--greyscalewhite);
-    font-family: var(--h7-font-family);
-    font-size: var(--h7-font-size);
-    font-style: var(--h7-font-style);
-    font-weight: var(--h7-font-weight);
-    left: 327px;
-    letter-spacing: var(--h7-letter-spacing);
-    line-height: var(--h7-line-height);
-    position: absolute;
-    text-align: center;
-    top: 24px;
-  }
-  
-  .indexS .icons-back {
-    height: 24px;
-    left: 10px;
-    position: absolute;
-    top: 265px;
-    width: 24px;
-  }
-  
-  .indexS .icons-back-2 {
-    height: 32px;
-    left: 981px;
-    position: absolute;
-    top: 265px;
-    width: 24px;
-    transform: scaleX(-1);
-  }
-  
-  .indexS .frame-wrapper {
-    height: 43px;
-    left: 708px;
-    position: absolute;
-    top: 253px;
-    width: 23px;
-  }
-  
-  .indexS .group-wrapper {
-    height: 43px;
-    overflow: hidden;
-  }
-  
-  .indexS .overlap-group-wrapper {
-    height: 43px;
-    left: -22px;
-    position: relative;
-    width: 23px;
-  }
-  
-  .indexS .overlap-group {
-    height: 43px;
-    left: 3px;
-    position: relative;
-    width: 20px;
-  }
-  
-  .indexS .image-2 {
-    height: 60px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 60px;
-  }
-  
-  .indexS .image-3 {
-    height: 43px;
-    left: 11px;
-    position: absolute;
-    top: 0;
-    width: 9px;
-  }
-  
-  .indexS .vector {
-    height: 43px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 20px;
-  }
-  
-  .indexS .div-wrapper {
-    height: 55px;
-    left: 20px;
-    position: relative;
-    top: 20px;
-    width: 55px;
-  }
-  
-  .indexS .div {
-    height: 55px;
-    position: relative;
-  }
-  
-  .indexS .subtract {
-    height: 1px;
-    left: 1218px;
-    position: absolute;
-    top: -4873px;
-    width: 1px;
-  }
-  
-  .indexS .vector-wrapper {
-    background-image: url(../../assets/iconsService/vector-7.svg);
-    background-size: 100% 100%;
-    height: 55px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 55px;
-  }
-  
-  .indexS .vector-2 {
-    height: 24px;
-    left: 22px;
-    position: absolute;
-    top: 16px;
-    width: 14px;
-  }
-  
-  .indexS .plus {
-    -webkit-backdrop-filter: blur(10px) brightness(100%);
-    backdrop-filter: blur(10px) brightness(100%);
-    background-color: #4e4e6133;
-    background-image: url(../../assets/iconsService/icons-plus.svg);
-    background-size: 100% 100%;
-    border-radius: 16px;
-    height: 48px;
-    left: 805px;
-    position: absolute;
-    top: 663px;
-    width: 48px;
-  }
-  
-  .indexS .minus {
-    -webkit-backdrop-filter: blur(10px) brightness(100%);
-    backdrop-filter: blur(10px) brightness(100%);
-    background-color: #4e4e6133;
-    background-image: url(../../assets/iconsService/icons-minus.svg);
-    background-size: 100% 100%;
-    border-radius: 16px;
-    height: 48px;
-    left: 544px;
-    position: absolute;
-    top: 663px;
-    width: 48px;
-  }
-  
-  .indexS .price {
-    -webkit-backdrop-filter: blur(10px) brightness(100%);
-    backdrop-filter: blur(10px) brightness(100%);
-    border-radius: 16px;
-    height: 100px;
-    left: 618px;
-    position: absolute;
-    top: 635px;
-    width: 161px;
-  }
-  
-  .indexS .line {
-    height: 1px;
-    left: -1px;
-    object-fit: cover;
-    position: absolute;
-    top: 83px;
-    width: 162px;
-  }
-  
-  .indexS .text-wrapper-2 {
-    color: var(--greyscalewhite);
-    font-family: var(--h5-font-family);
-    font-size: var(--h5-font-size);
-    font-style: var(--h5-font-style);
-    font-weight: var(--h5-font-weight);
-    left: 38px;
-    letter-spacing: var(--h5-letter-spacing);
-    line-height: var(--h5-line-height);
-    position: absolute;
-    text-align: center;
-    top: 39px;
-    white-space: nowrap;
-  }
-  
-  .indexS .text-wrapper-3 {
-    color: var(--greyscalegrey-40);
-    font-family: var(--h1-font-family);
-    font-size: var(--h1-font-size);
-    font-style: var(--h1-font-style);
-    font-weight: var(--h1-font-weight);
-    left: 42px;
-    letter-spacing: var(--h1-letter-spacing);
-    line-height: var(--h1-line-height);
-    position: absolute;
-    text-align: center;
-    top: 19px;
-    white-space: nowrap;
-  }
-  
-  .indexS .text-wrapper-4 {
-    color: var(--greyscalegrey-30);
-    font-family: var(--body-large-font-family);
-    font-size: var(--body-large-font-size);
-    font-style: var(--body-large-font-style);
-    font-weight: var(--body-large-font-weight);
-    height: 24px;
-    left: 135px;
-    letter-spacing: var(--body-large-letter-spacing);
-    line-height: var(--body-large-line-height);
-    position: absolute;
-    text-align: center;
-    top: 31px;
-    white-space: nowrap;
-  }
-  
-  .indexS .icons-back-3 {
-    height: 24px;
-    left: 24px;
-    position: absolute;
-    top: 32px;
-    width: 24px;
-  }
-  
-  .indexS .button {
-    height: 98px;
-    left: 510px;
-    position: absolute;
-    top: 742px;
-    width: 374px;
-  }
+.indexS .quadrado-logo-4 {
+  background-color: #000000;
+  border-radius: 24px;
+  height: 95px;
+  left: 834px;
+  position: absolute;
+  top: 226px;
+  width: 95px;
+}
 
-  .botaoquatro {
+.indexS .quadrado-logo-5 {
+  background-color: #000000;
+  border-radius: 24px;
+  height: 95px;
+  left: 663px;
+  position: absolute;
+  top: 226px;
+  width: 95px;
+}
+
+.indexS .imageLogoStreaming {
+  height: 63px;
+  left: 16px;
+  position: absolute;
+  top: 16px;
+  width: 63px;
+}
+
+.indexS .imageLogoStreamingPrincipal {
+  height: 93px;
+  left: 20px;
+  position: absolute;
+  top: 21px;
+  width: 93px;
+}
+
+.indexS .group {
+  background-color: #000000;
+  border-radius: 24px;
+  height: 95px;
+  left: 668px;
+  position: absolute;
+  top: 227px;
+  width: 95px;
+}
+
+.indexS .img {
+  height: 41px;
+  left: 17px;
+  position: absolute;
+  top: 29px;
+  width: 62px;
+}
+
+.indexS .input-description {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  left: 350px;
+  position: absolute;
+  top: 379px;
+  width: 327px;
+}
+
+.indexS .input-plano {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  left: 350px;
+  position: absolute;
+  top: 420px;
+  width: 327px;
+}
+
+.indexS .auto-layout-vertical {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  width: 327px;
+}
+
+.indexS .text-wrapper {
+  align-self: stretch;
+  color: var(--greyscalegrey-50);
+  font-family: var(--body-small-font-family);
+  font-size: 20;
+  font-style: var(--body-small-font-style);
+  font-weight: var(--body-small-font-weight);
+  letter-spacing: var(--body-small-letter-spacing);
+  line-height: var(--body-small-line-height);
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.indexS .text-plano {
+  align-self: stretch;
+  color: var(--greyscalewhite);
+  font-family: var(--body-small-font-family);
+  font-size: 90;
+  font-style: var(--body-small-font-style);
+  font-weight: var(--body-small-font-weight);
+  letter-spacing: var(--body-small-letter-spacing);
+  line-height: var(--body-small-line-height);
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+}
+
+.indexS .input {
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  align-self: stretch;
+  backdrop-filter: blur(10px) brightness(100%);
+  border: 1px solid;
+  border-color: var(--greyscalegrey-70);
+  border-radius: 16px;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.indexS .light-BG {
+  background-color: #353542;
+  border-radius: 48.23px;
+  position: relative;
+  width: 1024px;
+  height: 476px;
+  flex-shrink: 0;
+}
+
+.indexS .rectangle {
+  background-color: #000000;
+  border-radius: 48.23px;
+  height: 161px;
+  position: relative;
+  width: 161px;
+}
+
+.indexS .image {
+  height: 92px;
+  left: 31px;
+  position: absolute;
+  top: 35px;
+  width: 100px;
+}
+
+.indexS .adicionar-novo-servi {
+  color: var(--greyscalewhite);
+  font-family: var(--h7-font-family);
+  font-size: var(--h7-font-size);
+  font-style: var(--h7-font-style);
+  font-weight: var(--h7-font-weight);
+  left: 327px;
+  letter-spacing: var(--h7-letter-spacing);
+  line-height: var(--h7-line-height);
+  position: absolute;
+  text-align: center;
+  top: 24px;
+}
+
+.indexS .icons-back {
+  height: 24px;
+  left: 10px;
+  position: absolute;
+  top: 265px;
+  width: 24px;
+}
+
+.indexS .icons-back-2 {
+  height: 32px;
+  left: 981px;
+  position: absolute;
+  top: 265px;
+  width: 24px;
+  transform: scaleX(-1);
+}
+
+.indexS .frame-wrapper {
+  height: 43px;
+  left: 708px;
+  position: absolute;
+  top: 253px;
+  width: 23px;
+}
+
+.indexS .group-wrapper {
+  height: 43px;
+  overflow: hidden;
+}
+
+.indexS .overlap-group-wrapper {
+  height: 43px;
+  left: -22px;
+  position: relative;
+  width: 23px;
+}
+
+.indexS .overlap-group {
+  height: 43px;
+  left: 3px;
+  position: relative;
+  width: 20px;
+}
+
+.indexS .image-2 {
+  height: 60px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 60px;
+}
+
+.indexS .image-3 {
+  height: 43px;
+  left: 11px;
+  position: absolute;
+  top: 0;
+  width: 9px;
+}
+
+.indexS .vector {
+  height: 43px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}
+
+.indexS .div-wrapper {
+  height: 55px;
+  left: 20px;
+  position: relative;
+  top: 20px;
+  width: 55px;
+}
+
+.indexS .div {
+  height: 55px;
+  position: relative;
+}
+
+.indexS .subtract {
+  height: 1px;
+  left: 1218px;
+  position: absolute;
+  top: -4873px;
+  width: 1px;
+}
+
+.indexS .vector-wrapper {
+  background-image: url(../../assets/iconsService/vector-7.svg);
+  background-size: 100% 100%;
+  height: 55px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 55px;
+}
+
+.indexS .vector-2 {
+  height: 24px;
+  left: 22px;
+  position: absolute;
+  top: 16px;
+  width: 14px;
+}
+
+.indexS .plus {
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  backdrop-filter: blur(10px) brightness(100%);
+  background-color: #4e4e6133;
+  background-image: url(../../assets/iconsService/icons-plus.svg);
+  background-size: 100% 100%;
+  border-radius: 16px;
+  height: 48px;
+  left: 805px;
+  position: absolute;
+  top: 663px;
+  width: 48px;
+}
+
+.indexS .minus {
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  backdrop-filter: blur(10px) brightness(100%);
+  background-color: #4e4e6133;
+  background-image: url(../../assets/iconsService/icons-minus.svg);
+  background-size: 100% 100%;
+  border-radius: 16px;
+  height: 48px;
+  left: 544px;
+  position: absolute;
+  top: 663px;
+  width: 48px;
+}
+
+.indexS .price {
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  backdrop-filter: blur(10px) brightness(100%);
+  border-radius: 16px;
+  height: 100px;
+  left: 618px;
+  position: absolute;
+  top: 635px;
+  width: 161px;
+}
+
+.indexS .line {
+  height: 1px;
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: 83px;
+  width: 162px;
+}
+
+.indexS .text-wrapper-2 {
+  color: var(--greyscalewhite);
+  font-family: var(--h5-font-family);
+  font-size: var(--h5-font-size);
+  font-style: var(--h5-font-style);
+  font-weight: var(--h5-font-weight);
+  left: 38px;
+  letter-spacing: var(--h5-letter-spacing);
+  line-height: var(--h5-line-height);
+  position: absolute;
+  text-align: center;
+  top: 39px;
+  white-space: nowrap;
+}
+
+.indexS .text-wrapper-3 {
+  color: var(--greyscalegrey-40);
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  font-style: var(--h1-font-style);
+  font-weight: var(--h1-font-weight);
+  left: 42px;
+  letter-spacing: var(--h1-letter-spacing);
+  line-height: var(--h1-line-height);
+  position: absolute;
+  text-align: center;
+  top: 19px;
+  white-space: nowrap;
+}
+
+.indexS .text-wrapper-4 {
+  color: var(--greyscalegrey-30);
+  font-family: var(--body-large-font-family);
+  font-size: var(--body-large-font-size);
+  font-style: var(--body-large-font-style);
+  font-weight: var(--body-large-font-weight);
+  height: 24px;
+  left: 135px;
+  letter-spacing: var(--body-large-letter-spacing);
+  line-height: var(--body-large-line-height);
+  position: absolute;
+  text-align: center;
+  top: 31px;
+  white-space: nowrap;
+}
+
+.indexS .icons-back-3 {
+  height: 24px;
+  left: 24px;
+  position: absolute;
+  top: 32px;
+  width: 24px;
+}
+
+.indexS .button {
+  height: 98px;
+  left: 510px;
+  position: absolute;
+  top: 742px;
+  width: 374px;
+}
+
+.botaoquatro {
   width: 324px;
   padding: 14px 24px;
   border-radius: 999px;
-  border: 1px solid #FFF;
-  color: #FFF;
+  border: 1px solid #fff;
+  color: #fff;
   text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
   margin: 10px 0;
   transition: background-color 0.2s;
   text-decoration: none;
-  background: radial-gradient(100% 100% at 50% 100%, rgba(255, 255, 255, 0.00) 43.25%, rgba(255, 127, 55, 0.50) 100%), #FF7966;
-  box-shadow: 0px 8px 25px 0px rgba(255, 121, 102, 0.50);
+  background: radial-gradient(
+      100% 100% at 50% 100%,
+      rgba(255, 255, 255, 0) 43.25%,
+      rgba(255, 127, 55, 0.5) 100%
+    ),
+    #ff7966;
+  box-shadow: 0px 8px 25px 0px rgba(255, 121, 102, 0.5);
 }
 
 .botaoquatro:hover {
   background-color: #da2f49;
+}
+
+.indexS .frameNav {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  left: 37px;
+  position: absolute;
+  top: 39px;
+}
+
+.indexS .frameNav-2 {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  left: 353px;
+  position: absolute;
+  top: 39px;
+}
+
+.indexS .active-subs-2 {
+  -webkit-backdrop-filter: blur(10px) brightness(100%);
+  backdrop-filter: blur(10px) brightness(100%);
+  background-color: #4e4e6133;
+  border: none; /* ou border: 0; */
+  border-radius: 16px;
+  height: 69px;
+  margin: 0; /* Adicione essa linha para remover margens */
+  position: relative;
+  width: 129px;
+}
+
+.indexS .color-orange {
+  color: rgb(255, 121, 102);
+}
+
+.indexS .shadownBox {
+  box-shadow: 5px 5px 5px #ff796680;
+}
+
+.indexS .overlap-groupNav {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 23px;
+  width: 113px;
+}
+
+.indexS .text-wrapper-5 {
+  color: var(--greyscalegrey-40);
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  font-style: var(--h1-font-style);
+  font-weight: var(--h1-font-weight);
+  left: 49px;
+  letter-spacing: var(--h1-letter-spacing);
+  line-height: var(--h1-line-height);
+  position: absolute;
+  text-align: center;
+  top: 6px;
+  white-space: nowrap;
+}
+
+.indexS .home {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 66px;
+}
+
+.indexS .icons-home {
+  height: 18px;
+  left: 24px;
+  position: absolute;
+  top: 3px;
+  width: 18px;
+}
+
+.indexS .line-2 {
+  height: 1px;
+  left: 42px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 46px;
+}
+
+.indexS .active-subs-wrapper {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  left: 195px;
+  position: absolute;
+  top: 39px;
+}
+
+.indexS .text-wrapper-6 {
+  color: var(--greyscalegrey-40);
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  font-style: var(--h1-font-style);
+  font-weight: var(--h1-font-weight);
+  left: 42px;
+  letter-spacing: var(--h1-letter-spacing);
+  line-height: var(--h1-line-height);
+  position: absolute;
+  text-align: center;
+  top: 29px;
+  white-space: nowrap;
+}
+
+.indexS .icons-credit-cards {
+  height: 18px;
+  left: 18px;
+  position: absolute;
+  top: 26px;
+  width: 18px;
+}
+
+.indexS .text-wrapper-7 {
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  font-style: var(--h1-font-style);
+  font-weight: var(--h1-font-weight);
+  left: 42px;
+  letter-spacing: var(--h1-letter-spacing);
+  line-height: var(--h1-line-height);
+  position: absolute;
+  text-align: center;
+  top: 29px;
+  white-space: nowrap;
+}
+
+.indexS .icons-settings {
+  height: 24px;
+  left: 8px;
+  position: absolute;
+  top: 24px;
+  width: 24px;
+}
+
+.indexS .div-wrapperNav {
+  align-items: flex-end;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  left: 1295px;
+  position: absolute;
+  top: 39px;
+}
+
+.indexS .text-wrapper-8 {
+  color: var(--greyscalegrey-40);
+  font-family: "Inter", Helvetica;
+  font-size: 14px;
+  font-weight: 600;
+  left: 52px;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: absolute;
+  text-align: center;
+  top: 26px;
+  white-space: nowrap;
 }
