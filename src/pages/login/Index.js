@@ -70,6 +70,7 @@ function Index() {
             type="email"
             id="email"
             value={email}
+            required
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
@@ -82,6 +83,7 @@ function Index() {
             type="password"
             id="password"
             value={password}
+            required
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
@@ -96,7 +98,7 @@ function Index() {
           <span id="labelentrar" className="labelintro 2">
             Você não possui uma conta?
           </span>
-          <Link to="/cadastroUm" className="botaoentrar">
+          <Link to="/cadastro" className="botaoentrar">
             Crie uma conta
           </Link>
         </div>

@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./styleD.css";
 import { Link, Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import line from "../../assets/iconsDashboard/line.svg";
-import icons_home from "../../assets/iconsDashboard/icons-home.svg";
+import icons_home from "../../assets/iconsDashboard/icons-home-orange.svg";
 import frame from "../../assets/iconsDashboard/frame.svg";
 import line_1 from "../../assets/iconsDashboard/line-1.svg";
 import icons_credit_cards from "../../assets/iconsDashboard/icons-credit-cards.svg";
-import icons_settings from "../../assets/iconsDashboard/icons-settings.svg";
+import icons_play from "../../assets/iconsDashboard/icon-play.svg";
+import icons_remover from "../../assets/iconsDashboard/icons-remover.svg";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import CircularProgressBar from "./CircularProgressBar";
@@ -26,7 +27,6 @@ function Index() {
       .catch((error) => {
         console.error("Erro ao obter informações do usuário:", error);
       });
-    console.log("User ID:", userId);
 
     const fetchData = async () => {
       try {
@@ -34,9 +34,6 @@ function Index() {
           `https://duduck-api-latest.onrender.com/user/${userId}`
         );
         setUserSubscriptions(response.data.subscriptions);
-
-        // Agora você pode realizar outras operações após obter os dados do usuário
-        console.log("User ID:", userId);
 
         const totalCost = calculateTotalCost();
         const width = Math.floor(totalCost / 10);
@@ -48,6 +45,30 @@ function Index() {
 
     fetchData();
   }, [userId]);
+
+  const RemoveService = async (event) => {
+    axios
+      .delete(
+        `https://duduck-api-latest.onrender.com/subscriptions/${userId}/` +
+          event
+      )
+      .then((response) => {
+        // Lógica após a conclusão bem-sucedida
+        console.log("Serviço removido com sucesso!", response.data);
+
+        axios
+          .get(`https://duduck-api-latest.onrender.com/user/${userId}`)
+          .then((response) => {
+            setUserSubscriptions(response.data.subscriptions);
+          })
+          .catch((error) => {
+            console.error("Erro ao obter informações do usuário:", error);
+          });
+      })
+      .catch((error) => {
+        console.error("Erro ao remover serviço:", error);
+      });
+  };
 
   const calculateTotalCost = () => {
     if (Array.isArray(userSubscriptions) && userSubscriptions?.length > 0) {
@@ -135,15 +156,15 @@ function Index() {
           </Link>
         </div>
         <div className="frame-2">
-          <Link to="/config">
+        <Link to={`/service/${userId}`}>
             <div className="active-subs-2">
-              <div className="text-wrapper-7">Configurações</div>
+              <div className="text-wrapper-7">Serviços</div>
               <img className="line-2" alt="Line" src={line_1} />
             </div>
             <img
               className="icons-settings"
-              alt="Icons settings"
-              src={icons_settings}
+              alt="icons_play"
+              src={icons_play}
             />
           </Link>
         </div>
@@ -186,6 +207,18 @@ function Index() {
                         src={subscription.image}
                       />
                     </div>
+                  </div>
+                </div>
+                <div
+                  className="logo-remover"
+                  onClick={(e) => RemoveService(subscription.id)}
+                >
+                  <div className="frame-4">
+                    <img
+                      src={icons_remover}
+                      alt={`remover`}
+                      className="image-remover"
+                    />
                   </div>
                 </div>
               </div>

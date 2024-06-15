@@ -22,7 +22,7 @@ function Index() {
       </div>
       <main className="appmain">
         <div className="botoes">
-          <Link to="/cadastroDois" className="botaoum link">Iniciar</Link>
+          <Link to="/cadastro" className="botaoum link">Iniciar</Link>
           <Link to="/login" className="botaodois link">Eu tenho uma conta</Link>
         </div>
       </main>
